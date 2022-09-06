@@ -15,8 +15,11 @@
             int[] arr3 = new int[array1.Length + array2.Length];
             Array.Copy(array1, arr3, array1.Length);
             Array.Copy(array2, 0, arr3, array1.Length, array2.Length);
-            return arr3;
-            
+            foreach(int i in arr3)
+            {
+                Console.WriteLine(i);
+            }
+            return new int[10];
         }
     }
 
