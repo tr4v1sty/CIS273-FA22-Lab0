@@ -10,7 +10,13 @@
 
         public static int[] MergeSortedArrays(int[] array1, int[] array2)
         {
-            return new int[10];
+            
+            
+            int[] arr3 = new int[array1.Length + array2.Length];
+            Array.Copy(array1, arr3, array1.Length);
+            Array.Copy(array2, 0, arr3, array1.Length, array2.Length);
+            return arr3;
+            
         }
     }
 
