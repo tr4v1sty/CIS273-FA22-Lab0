@@ -5,8 +5,17 @@ namespace Uno
 	{
 		public Player()
 		{
-			Player.Name = "John Smith";
-			Player.Hand = null;
+			
+			
+
+        }
+		public string Name { get; set; }
+
+		public object Hand { get; set; }
+
+		public bool HasPlayableCard(Card card)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
