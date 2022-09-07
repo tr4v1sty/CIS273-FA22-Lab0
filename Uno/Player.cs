@@ -5,6 +5,8 @@ namespace Uno
 	{
 		public Player()
 		{
+			Player.Name = "John Smith";
+			Player.Hand = null;
 		}
 	}
 }
