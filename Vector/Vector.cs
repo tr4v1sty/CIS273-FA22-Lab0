@@ -10,7 +10,7 @@ namespace Vector
 		{
 			get
 			{
-				return Math.Sqrt(X*X + Y*Y);
+				return Math.Sqrt(X * X + Y * Y);
 			}
 		}
 		public double Direction
@@ -20,22 +20,61 @@ namespace Vector
 				return Math.Atan2(Y, X) * 180/Math.PI;
 			}
 		}
-		public double Add
-		{
-			get { return Math.Sqrt(X*X + Y*Y); }
-		}
-		public double Subtract
-		{
-			get => Math.Sqrt(X*X + Y*Y);
-		}
-		public double Dot
-		{
-			get { return Math.Sqrt(X*X + Y*Y); }
-		}
-		public double AngleBetween { get; set; }
 
-		
-	}
+		public Vector(double x, double y)
+		{
+			X = x;
+			Y = y;
+		}
+
+
+        public  Vector Add(Vector v)
+        {
+			Vector result = new Vector(this.X + v.X, this.Y + v.Y);
+
+			return result;
+        }
+        public Vector Subtract(Vector v)
+        {
+            Vector result = new Vector(this.X - v.X, this.Y - v.Y);
+
+            return result;
+        }
+
+        public double AngleBetween(Vector v)
+        {
+            return 0.0;
+        }
+
+        public double Dot(Vector v)
+        {
+            return 0.0;
+        }
+
+        
+		public override string ToString()
+		{
+			
+			return $"<{X},{Y}>";
+		}
+
+		public static Vector operator + (Vector a, Vector b)
+		{
+			return a.Add(b);
+		}
+        public static Vector operator -(Vector a, Vector b)
+        {
+            return a.Subtract(b);
+        }
+        public static double operator *(Vector a, Vector b)
+        {
+            return a.Dot(b);
+        }
+        public static double AngleBetween(Vector a, Vector b)
+        {
+            return a.AngleBetween(b);
+        }
+    }
 	
 }
 // use the vector dot  and angle between etc stuff from the google doc and just add public
