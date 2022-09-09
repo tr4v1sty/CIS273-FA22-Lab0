@@ -19,7 +19,7 @@ namespace MergeArrays
             {
                 Console.WriteLine(i);
             }
-            return new int[10];
+            return arr3;
         }
     }
 

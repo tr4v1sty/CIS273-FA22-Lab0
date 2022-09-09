@@ -63,7 +63,7 @@ namespace Vector
 		public override string ToString()
 		{
 			
-			return $"<{X},{Y}>";
+			return $"<{X}, {Y}>";
 		}
 
 		public static Vector operator + (Vector a, Vector b)
