@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Numerics;
+
 namespace Vector
 {
 	public struct Vector
@@ -43,12 +45,15 @@ namespace Vector
 
         public double AngleBetween(Vector v)
         {
-            return 0.0;
+
+			return 0.0;
+            
         }
 
         public double Dot(Vector v)
         {
-            return 0.0;
+			return(this.X * v.X + this.Y * v.Y);
+            
         }
 
         
