@@ -24,6 +24,7 @@ namespace Uno
 
 		public Card()
 		{
+
 		}
 
 		public Card(CardType type, Color color, int? number=null)
@@ -40,8 +41,13 @@ namespace Uno
 			{
 				return false;
 			}
-
-			return true;
+			if(card2.Color == card1.Color) { return true; }
+			if(card2.Number == card1.Number) { return true; }
+			else
+			{
+				return false;
+			}
+            
 
 		}
 

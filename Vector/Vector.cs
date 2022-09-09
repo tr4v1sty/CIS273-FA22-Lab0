@@ -46,7 +46,8 @@ namespace Vector
         public double AngleBetween(Vector v)
         {
 
-			return 0.0;
+			return Math.Acos((this.X * v.X + this.Y * v.Y) / (Math.Sqrt(this.X * this.X + this.Y * this.Y) * (Math.Sqrt(v.X * v.X + v.Y * v.Y))));
+            
             
         }
 
