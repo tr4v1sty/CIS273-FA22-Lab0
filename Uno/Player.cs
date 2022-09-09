@@ -18,7 +18,7 @@ namespace Uno
 
 		public Card GetFirstPlayableCard(Card card)
 		{
-            return new Card();
+            return new Card( card.Type, card.Color, card.Number);
             
         }
 
