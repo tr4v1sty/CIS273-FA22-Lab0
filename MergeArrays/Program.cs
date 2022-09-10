@@ -12,14 +12,44 @@ namespace MergeArrays
 
         public static int[] MergeSortedArrays(int[] array1, int[] array2)
         {
-            int[] arr3 = new int[array1.Length + array2.Length];
-            Array.Copy(array1, arr3, array1.Length);
-            Array.Copy(array2, 0, arr3, array1.Length, array2.Length);
-            foreach (int i in arr3)
+            
+
+            int count1 = array1.Length;
+            int count2 = array2.Length;
+            int[] arrayResult = new int[count1 + count2];
+
+            int a = 0, b = 0;   // for arr1 and arr2
+            int i = 0;          // for result
+
+            
+            while (a < count1 && b < count2)
             {
-                Console.WriteLine(i);
+                if (array1[a] <= array2[b])
+                {
+                    arrayResult[i++] = array1[a++];
+                }
+                else
+                {
+                    arrayResult[i++] = array2[b++];
+                }
             }
-            return arr3;
+            if (a < count1)
+            {
+                 //first
+                for (int x = a; x < count1; x++)
+                {
+                    arrayResult[i++] = array1[x];
+                }
+            }
+            else
+            {
+                //2nd
+                for (int x = b; x < count2; x++)
+                {
+                    arrayResult[i++] = array2[x];
+                }
+            }
+            return arrayResult;
         }
     }
 
