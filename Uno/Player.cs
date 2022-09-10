@@ -24,8 +24,8 @@ namespace Uno
 
 		public bool HasPlayableCard(Card card)
 		{
-			return false;
-		}
+            return false;
+        }
         public Color MostCommonColor()
         {
             return Color.Blue;
