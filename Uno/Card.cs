@@ -18,7 +18,7 @@ namespace Uno
 
     public class Card
     {
-        public CardType Type { get; set; }
+        public  CardType Type { get; set; }
         public Color Color { get; set; }
         public int? Number { get; set; }
 
