@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 
 namespace Uno
@@ -16,15 +17,46 @@ namespace Uno
         }
 
 
-		public Card GetFirstPlayableCard(Card card)
+		public Card? GetFirstPlayableCard(Card card)
 		{
-            return new Card( card.Type, card.Color, card.Number);
+            int i = 0;
+            int index = -1;
+            while ((i < Hand.Count) && (index == -1))
+            {
+                if (Card.PlaysOn(Hand[i],card))
+                {
+                    index = i;
+                }
+                
+                i++;
+
+
+            }
+            if (index != -1)
+            {
+                return Hand[index];
+            }
+            
+            return null;
             
         }
 
 		public bool HasPlayableCard(Card card)
 		{
-            return false;
+            int i = 0;
+            bool index = false;
+            while ((i < Hand.Count) && (!index))
+            {
+                if (Card.PlaysOn(Hand[i], card))
+                {
+                    index = true;
+                }
+                i++;
+
+
+            }
+
+            return index;
         }
         public Color MostCommonColor()
         {
